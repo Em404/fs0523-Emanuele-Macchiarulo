@@ -12,8 +12,7 @@
 }
 
 .wrap-intestazione {
-  border-top-color: yellow;
-  border-top-style: double;
+  border-top: 2px solid yellow;
   background-color: lightgoldenrodyellow;
 }
 
@@ -39,8 +38,7 @@
 }
 
 .wrap-featured {
-  border-left-color: yellow;
-  border-left-style: double;
+  border-left: 2px solid yellow;
 }
 
 .featured {
