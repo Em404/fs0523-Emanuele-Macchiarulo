@@ -1,0 +1,18 @@
+CSS applicato a tutti gli elementi
+
+* {
+	box-sizing: border-box;
+}
+
+in qusto modo l'immagine si adatta al contenuto
+img {
+	max-width: 100%;
+}
+
+
+responsività
+.container {
+	height: 100vh;		// tutto schermo
+	width: 500px;		// dimensione del container - da non mettere nell'esercizio
+	margin: 0 auto;		// margine y 0, margine x in scala auto
+}
