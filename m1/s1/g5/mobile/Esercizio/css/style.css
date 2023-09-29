@@ -1,0 +1,182 @@
+/* import dei font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #393d41;
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #25a2c3;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 3rem;
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 2.4rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+h3 {
+  font-size: 1.6rem;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+hr {
+  margin: 2rem 8rem;
+}
+
+article {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* general class */
+.text-align-center {
+  text-align: center;
+}
+
+.img-round {
+  max-width: 100%;
+  height: auto;
+  border-radius: 100%;
+  margin-top: 2rem;
+}
+
+.img-art {
+  max-width: 100%;
+  height: auto;
+}
+
+.margin-container {
+  margin: 2rem 2rem;
+}
+
+.padding-container {
+  padding: 0 2rem;
+}
+
+.p-big {
+  font-size: 1.4rem;
+}
+
+.p-small {
+  font-size: 1rem;
+}
+
+/* header */
+.header {
+  background-color: black;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+}
+
+/* main */
+.section-background {
+  background-image: url(../images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.button {
+  background-color: #f04c2f;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 6px;
+  padding: 20px 40px;
+  margin-top: 40px;
+  border: 0;
+  cursor: pointer;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
+}
+
+.testimonianze {
+  background-color: #e22d0e;
+  color: white;
+  margin-top: 80px;
+  padding: 3rem 0;
+}
+
+.testimonianze h2 {
+  color: white;
+}
+
+.text-cite {
+  font-style: italic;
+  padding-bottom: 2rem;
+}
+
+.wrap-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.wrap-article article {
+  border: 1px solid #dee1e3;
+  border-radius: 5px;
+  max-width: 436px;
+}
+
+.text-article {
+  padding: 2rem;
+}
+
+.text-article h3 {
+  padding-top: 0px;
+}
+
+/* footer */
+.footer {
+  color: #c8e7f0;
+  background-color: #25a2c3;
+  margin-top: 50px;
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.footer h2 {
+  color: white;
+}
+
+.footer a {
+  color: #c8e7f0;
+}
+
+.position {
+  text-decoration: none;
+}
+
+.icon {
+  color: white;
+
+}
