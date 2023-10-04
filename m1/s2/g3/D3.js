@@ -119,6 +119,18 @@ starWarsCharacters.forEach(function(character, index) {
 })
 console.log(characters);
 
+
+//--------------------------------------- APPUNTI --------------------------------------------------------------------------------------------
+// ciclare oggetti in un array e recuperare le proprietà dell'oggetto
+// for(let i = 0; i < starWarsCharacters.length; i++) {
+//   let personaggioCorrente = starWarsCharacters[i];
+//   personaggioCorrente.name
+//   personaggioCorrente.gender
+// }
+//--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
@@ -144,6 +156,7 @@ let eyeColor = {
   yellow : [],
   brown : [],
   red : [],
+  // 'blue-gray' : [], soluzione corretta per adattarsi ai dati del BE ma il workaround funziona uguale
   blueGray : []
 }
 
@@ -256,3 +269,13 @@ console.log(genderBot);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+function randomCharacter () {
+  let randomIndex = (min = 0, max = starWarsCharacters.length) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  let total = starWarsCharacters.length - 1
+  index = randomIndex(0, total);
+  console.log('The character is ' + starWarsCharacters[index].name);
+}
+
+randomCharacter();
