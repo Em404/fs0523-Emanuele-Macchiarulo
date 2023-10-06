@@ -1,0 +1,156 @@
+/* Your styles here */
+body {
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  padding-right: 20px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  padding-bottom: 1rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  /* padding-bottom: 1rem; */
+}
+
+p {
+  font-weight: 600;
+}
+
+/* CUSTOM CLASS */
+
+.logo,
+.footer {
+  background-color: rgba(34, 47, 63, 255);
+}
+
+.navbar,
+.back-to-top {
+  background-color: rgba(54, 71, 89, 255);
+}
+
+.navbar a,
+.back-to-top a {
+  color: rgba(228, 238, 244, 255);
+}
+
+.logo-img {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 100px;
+}
+
+.navbar {
+  padding: 5px 0;
+}
+
+.ul-nav {
+  display: flex;
+  margin-left: 40px;
+}
+
+.container {
+  background-color: rgba(233, 237, 238, 255);
+  padding: 40px;
+}
+
+.banner {
+  background-color: rgba(245, 102, 0, 255);
+  color: rgba(228, 238, 244, 255);
+  padding: 5px 0;
+  margin-bottom: 40px;
+  text-align: center;
+  color: white;
+}
+
+.gift-guides {
+  background-image: url(../images/bg-image.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(228, 238, 244, 255);
+  margin-bottom: 40px;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  color: white;
+}
+
+.wrap-cards {
+  background-color: white;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  margin: 20px;
+  justify-content: space-around;
+}
+
+.card img {
+  border-radius: 10%;
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.5);
+}
+
+.wrap-product {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.wrap-cards a,
+.wrap-product a {
+  font-weight: 700;
+  color: rgba(92, 154, 173, 255);
+}
+
+.card-title {
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.product img {
+  min-width: 100%;
+  max-height: 500px;
+}
+
+.shop {
+  margin-left: 10px;
+}
+
+.back-to-top {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.back-to-top a {
+  text-decoration: underline;
+}
+
+.img-footer {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.footer-logo-img {
+  max-width: 200px;
+}

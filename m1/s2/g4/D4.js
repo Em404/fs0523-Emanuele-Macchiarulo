@@ -110,7 +110,7 @@ console.log(check3and7(20));
 */
 
 const reverseString = (s) => {
-  let gnirts = [...s].reverse().join("");
+  let gnirts = s.split('').reverse().join("");
   return gnirts;
 };
 
