@@ -125,8 +125,13 @@
       */
 
       const changeUrls = function () {
-        const link = document.getElementsByTagName("a");
-      }; //a:not footer a
+        const links = document.querySelectorAll("a:not(footer a)");
+        links.forEach(function(link) {
+        link.href = "https://www.google.com/";
+        });
+      }; 
+      
+      changeUrls();
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -198,12 +203,12 @@
       */
 
       const revealFooterLink = function () {
-        let footer = document.querySelector('footer')
-        let link = document.querySelector('footer a')
+        let footer = document.querySelector("footer");
+        let link = document.querySelector("footer a");
         console.log(link);
-        footer.addEventListener("click",function () {
-          alert(link)
-        })
+        footer.addEventListener("click", function () {
+          alert(link);
+        });
       };
 
       revealFooterLink();
@@ -213,7 +218,73 @@
        La tabella avrà 4 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-      const generateTable = function () {};
+      const generateTable = function () {
+        const tableArea = document.getElementById("tableArea");
+        let table = document.createElement("table");
+        let primaTr = document.createElement("tr");
+        let campi = ["immagine", "nome prodotto", "quantità", "prezzo"];
+        for (campo of campi) {
+          let th = document.createElement("th");
+          th.innerHTML = campo;
+          primaTr.append(th);
+        }
+        //inizio corpo tabella
+        let dati = [
+          {
+            immagine: "",
+            nomeProdotto: "Lorem ipsum",
+            quantita: 10,
+            prezzo: 10,
+          },
+          {
+            immagine: "",
+            nomeProdotto: "Lorem ipsum",
+            quantita: 10,
+            prezzo: 10,
+          },
+          {
+            immagine: "",
+            nomeProdotto: "Lorem ipsum",
+            quantita: 10,
+            prezzo: 10,
+          },
+          {
+            immagine: "",
+            nomeProdotto: "Lorem ipsum",
+            quantita: 10,
+            prezzo: 10,
+          },
+          {
+            immagine: "",
+            nomeProdotto: "Lorem ipsum",
+            quantita: 10,
+            prezzo: 10,
+          },
+        ];
+
+        for (let prodotto of dati) {
+          let tr = document.createElement("tr");
+
+          let tdImmagine = document.createElement("td");
+          tdImmagine.innerText = prodotto.immagine;
+
+          let tdNomeProdotto = document.createElement("td");
+          tdNomeProdotto.innerText = prodotto.nomeProdotto;
+
+          let tdQuantita = document.createElement("td");
+          tdQuantita.innerText = prodotto.quantita;
+
+          let tdPrezzo = document.createElement("td");
+          tdPrezzo.innerText = prodotto.prezzo;
+
+          tr.append(tdImmagine, tdNomeProdotto, tdQuantita, tdPrezzo);
+          table.append(tr);
+        }
+
+        tableArea.append(table);
+      };
+
+      generateTable();
 
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
