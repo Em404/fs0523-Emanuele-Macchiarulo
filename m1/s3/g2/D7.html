@@ -102,22 +102,31 @@
        Scrivi una funzione che cambi il testo dei p figli di un div
       */
 
-      const changePcontent = function () {
-        const divs = Array.from(document.getElementsByTagName("div"));
-        // console.log('divs: ', divs);
-        divs.map((d) => {
-          // console.log('d: ', d);
-          const children = Array.from(d.children);
-          // console.log('children: ', children);
-          children.map((c) => {
-            if (c.tagName == "P") {
-              // console.log('c: ', c);
-              c.innerHTML = "Mimmo Flowers";
-            }
-          });
-        });
-      };
+      // const changePcontent = function () {
+      //   const divs = Array.from(document.getElementsByTagName("div"));
+      //   // console.log('divs: ', divs);
+      //   divs.map((d) => {
+      //     // console.log('d: ', d);
+      //     const children = Array.from(d.children);
+      //     // console.log('children: ', children);
+      //     children.map((c) => {
+      //       if (c.tagName == "P") {
+      //         // console.log('c: ', c);
+      //         c.innerHTML = "Mimmo Flowers";
+      //       }
+      //     });
+      //   });
+      // };
 
+      // changePcontent();
+
+      const changePcontent = function () {
+        let p = document.querySelectorAll("div p");
+        console.log(p);
+        for (let i = 0; i < p.length; i++) {
+          p[i].innerHTML = "Mimmo Flowers";
+        }
+      };
       changePcontent();
 
       /* ESERCIZIO 4
@@ -126,11 +135,11 @@
 
       const changeUrls = function () {
         const links = document.querySelectorAll("a:not(footer a)");
-        links.forEach(function(link) {
-        link.href = "https://www.google.com/";
+        links.forEach(function (link) {
+          link.href = "https://www.google.com/";
         });
-      }; 
-      
+      };
+
       changeUrls();
 
       /* ESERCIZIO 5
