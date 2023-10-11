@@ -12,8 +12,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 /* custom class */
@@ -29,28 +29,28 @@ h2 {
 }
 
 .container {
-    padding-left: 100px;
-    padding-right: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
-.ol-done {
-    text-decoration: line-through;
+.ol-done{
+  text-decoration: line-through;
 }
 
 .list-item {
-    padding: 20px 20px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-
-
 .list-item:hover {
-    background-color: aqua;
+  background-color: aqua;
 }
 
 .done:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
-.delete-item {
-
+.delete-button {
+  display: flex;
 }
