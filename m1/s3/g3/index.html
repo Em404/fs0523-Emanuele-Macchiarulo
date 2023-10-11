@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list</title>
+    <link rel="stylesheet" href="asset/css/reset.css" />
+    <link rel="stylesheet" href="asset/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <!-- logo to do list -->
+      </div>
+      <div class="title">
+        <h1>To do list</h1>
+      </div>
+    </header>
+    <div class="container">
+      <main>
+        <div class="wrap-todolist">
+          <div class="title-todolist">
+            <h2>To do list</h2>
+          </div>
+          <div class="content-todolist">
+            <div class="item-todolist">
+              <input type="text" id="item" placeholder="Cose da fare..." />
+              <button id="save-item">Salva</button>
+            </div>
+            <hr />
+            <div class="items-todolist">
+              <div class="target">
+                <h2>Da fare...</h2>
+                <div class="item-todo">
+                  <ol id="ol-target" class="ol-todo"></ol>
+                </div>
+              </div>
+              <div class="target-done">
+                <h2>Fatto!</h2>
+                <div class="item-done">
+                  <ol id="ol-targetdone" class="ol-done"></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer></footer>
+    <script src="asset/js/g3.js"></script>
+  </body>
+</html>
