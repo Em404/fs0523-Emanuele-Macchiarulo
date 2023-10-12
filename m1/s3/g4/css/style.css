@@ -19,14 +19,6 @@
     font-weight: bold;
 }
 
-.epi-calendar input{
-    background-color: var(--main-dark-color);
-    border: none;
-    padding: 7px;
-    border-radius:5px;
-    color: #fff;
-}
-
 .button{
     background-color: var(--secondary-color);
     border: none;
