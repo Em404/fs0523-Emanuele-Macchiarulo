@@ -1,0 +1,82 @@
+:root{
+    --main-color:#131334;
+    --main-dark-color:#0C0B1D;
+    --secondary-color:#7a408a;
+}
+
+/* Tipografia o stili generici  */
+
+.tombola-title{
+    font-size: 3em;
+    padding: 10px 0;
+}
+
+.numero{
+    font-size: 1.3em;
+}
+
+.tombola-title{
+    font-weight: bold;
+}
+
+.epi-calendar input{
+    background-color: var(--main-dark-color);
+    border: none;
+    padding: 7px;
+    border-radius:5px;
+    color: #fff;
+}
+
+.button{
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius:5px;
+}
+
+/* box */
+
+.epi-tombola{
+    background-color: var(--main-color);
+    padding: 5px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    
+}
+
+/* numeri */
+
+.numeri{
+    background-color: var(--main-dark-color);
+    display: flex;/*attivo flex sul contenitore*/
+    flex-wrap: wrap;/*faccio si che i blocchi dentro al contenitore vadano su più righe*/
+    border: 1px solid white;
+}
+
+.numero{
+    flex: 0 1 calc(100% / 10);/*imposto una larghezza pari al 100% dello spazio disponibile in orizzontale diviso 7, così da avere 7 colonne*/
+    text-align: center;
+    padding: 25px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.numero:hover{
+    background-color: var(--main-color)
+}
+
+.numero.sorted{
+    color: var(--secondary-color);
+} 
+
+.generate-button{
+    flex: 1 1 25%;
+    box-sizing: border-box;
+}
+
+.button:hover{
+    cursor: pointer;
+}
