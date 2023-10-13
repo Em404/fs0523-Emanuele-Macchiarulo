@@ -361,19 +361,12 @@ console.log(deleteProp(obj, "Poster"));
 */
 
 const newestMovie = () => {
-  const dateUscita = movies.map((movie) => movie.Year);
-
-  const indiceFilmPiuRecente = Number(dateUscita.indexOf(Math.max(movies)));
-  console.log("dfsf" + indiceFilmPiuRecente);
-
-  console.log(movies[indiceFilmPiuRecente]);
-
-  // Restituisci il film più recente
-  console.log(movies[0]);
-  return movies[indiceFilmPiuRecente];
+  let test = Math.max(...movies.map((movie) => movie.Year))
+  console.log(test);
 };
 
 newestMovie();
+
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
@@ -521,12 +514,12 @@ linkRedBg();
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
-const newLi = document.createElement('li');
-const ul = document.getElementById('myList');
+const newLi = document.createElement("li");
+const ul = document.getElementById("myList");
 
 const addToList = () => {
   ul.append(newLi)
-}
+};
 
 addToList();
 
@@ -538,7 +531,7 @@ const emptyList = () => {
   while(ul.firstChild) {
     ul.removeChild(ul.firstChild)
   }
-}
+};
 
 emptyList();
 
@@ -565,6 +558,18 @@ const addClass = () => {
 
 */
 
+const halfTree = (numero) => {
+  for (let i = 0; i < numero; i++) {
+    let row = "*";
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+};
+
+halfTree(6);
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -577,6 +582,18 @@ const addClass = () => {
 
 */
 
+const tree = () => {
+
+}
+
+tree(5);
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+const isItPrime = (numero) => {
+  if(numero){}
+}
+
+isItPrime(7)
