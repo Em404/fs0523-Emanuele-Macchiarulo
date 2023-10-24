@@ -18,7 +18,29 @@ hr {
 
 /* MIE MODIFICHE */
 
+/* ESERCIZIO 2 ----------------------------------------------------------------------------------- */
+.img-underline {
+  display: inline;
+  position: relative;
+  text-wrap: nowrap;
+}
 
+.img-underline::after {
+  content: ""; /* serve per attivare lo pseudo-elemento after */
+  background-image: url(../img/underline.svg);
+  width: 100%;
+  height: 50px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  position: absolute;
+  bottom: -15px;
+  opacity: 0.7;
+  left: 0;
+}
+
+/* -------------------------------------------------------------------------------------------- */
 
 .header {
   /* position: fixed;
