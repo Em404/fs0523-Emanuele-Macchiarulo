@@ -43,12 +43,11 @@ hr {
 
 /* ESERCIZIO 3---------------------------------------------------------------------------------- */
 .header {
-  /* position: fixed;
-  width: 100% */
+  position: sticky;
+  z-index: 10;
+  top: 0;
 }
-
-.wrap-header {
-}
+/* --------------------------------------------------------------------------------------------- */
 
 /* ESERCIZIO 4 ---------------------------------------------------------------------------------- */
 .wrap-section {
@@ -84,39 +83,58 @@ hr {
 /* --------------------------------------------------------------------------------------------- */
 
 /* ESERCIZIO 5 6 7 8 --------------------------------------------------------------------------- */
-.nav-btn-wrap {
+.social, .to-top {
+  line-height: 1;
   position: fixed;
-  right: -10px;
-  bottom: 15px;
+  right: -18px;
+  z-index: 999;
 }
 
-.btn {
-  padding: 10px;
+.social {
+  top: 16px;
+}
+
+.to-top {
+  bottom: 16px;
+}
+
+.to-top a,
+.social a {
+  color: #f7575e;
+  font-size: 2rem;
   display: block;
-  font-size: 1.5rem;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin-top: 15px;
-  transition: all 0.3s;
-  cursor: pointer;
 }
 
-.btn:hover {
-  background-color: white;
-  position: relative;
-  margin-left: -10px;
-}
-
-.btn-to-top {
-}
-
-.btn-blue {
+.social a {
   color: blue;
 }
 
-.btn-red {
+.to-top a {
   color: red;
 }
+
+.social a:first-child {
+  margin-bottom: 1rem;
+}
+
+.to-top .far,
+.social .far {
+  background: #ffffffa1;
+  backdrop-filter: blur(2px);
+  line-height: 0.8;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+  padding: 16px;
+  border: 3px solid white;
+}
+
+@media screen and (max-width: 700px) {
+  .social {
+    top: unset;
+    bottom: 96px;
+  }
+}
+
 /* --------------------------------------------------------------------------------------------- */
 
 /* HEADER */
