@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 h1 {
-  font-size: 2rem;  
+  font-size: 2rem;
 }
 
 h2 {
@@ -12,7 +12,9 @@ h3 {
   font-size: 1.2rem;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 600;
   color: #612406;
   margin-top: 20px;
@@ -28,7 +30,7 @@ a {
 }
 
 .container {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0 20px;
 }
 /* HEADER */
@@ -51,8 +53,8 @@ a {
 }
 
 .logo-container {
- font-size: 1.4rem;
- justify-content: center;
+  font-size: 1.4rem;
+  justify-content: center;
 }
 
 .logo-img {
@@ -67,12 +69,15 @@ a {
   flex-basis: 100%;
 }
 
-.link2, .link3, .link4, .link5 {
-  flex-basis: calc(50% - 7px) /* 10px sono la metà del gap */
+.link2,
+.link3,
+.link4,
+.link5 {
+  flex-basis: calc(50% - 7px); /* 10px sono la metà del gap */
 }
 
 .item {
-  background-color: #F3DF85;
+  background-color: #f3df85;
   border-radius: 80px;
   text-align: center;
   margin-bottom: 10px;
@@ -82,45 +87,52 @@ a {
 }
 
 @media screen and (min-width: 576px) {
- .menu li.li-item {
-  flex-basis: auto;
- }
+  .menu li.li-item {
+    flex-basis: auto;
+  }
 
- .link1 {
-  order: 3
- }
+  .link1 {
+    order: 3;
+  }
 
- .link2 {
-  order: 1
- }
+  .link2 {
+    order: 1;
+  }
 
- .link3 {
-  order: 2
- }
+  .link3 {
+    order: 2;
+  }
 
- .link4 {
-  order: 4
- }
+  .link4 {
+    order: 4;
+  }
 
- .link5 {
-  order: 5
- }
-
+  .link5 {
+    order: 5;
+  }
 }
 
 @media screen and (min-width: 769px) {
-
-  .flex-layout {
+  .flex-wrapper {
     display: flex;
-    width: 50%;
   }
 
   .flex-header {
-    flex: 1;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+     /* Disable horizontal scroll */
   }
 
-  .flex-content{
-    flex: 1;
+  .header{
+    height: 100%;
+    width: 160px;
+    border-radius: 0%;
+    overflow-x: hidden;
+    margin-top: 0;
   }
 
   .menu {
@@ -135,25 +147,24 @@ a {
   }
 
   .link1 {
-    order: 1
-   }
-  
-   .link2 {
-    order: 2
-   }
-  
-   .link3 {
-    order: 3
-   }
-  
-   .link4 {
-    order: 4
-   }
-  
-   .link5 {
-    order: 5
-   }
+    order: 1;
+  }
 
+  .link2 {
+    order: 2;
+  }
+
+  .link3 {
+    order: 3;
+  }
+
+  .link4 {
+    order: 4;
+  }
+
+  .link5 {
+    order: 5;
+  }
 }
 
 /* MAIN ---------------------------------------------------------------------------------------------- */
@@ -161,10 +172,9 @@ a {
   h1 {
     text-align: center;
   }
-
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
   .cards {
     display: flex;
     justify-content: space-between;
@@ -172,17 +182,33 @@ a {
   }
 
   .card {
-    max-width: 220px;
+    max-width: 200px;
+  }
+
+  .main-wrap, .article {
+    margin-left: 200px;
+  }
+  
+}
+
+@media screen and (min-width: 1025px) {
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .card:last-child {
     display: none;
   }
-
-}
-
-.main-wrap {
-  margin: 40px 0;
+ 
+  .card {
+    max-width: 220px;
+  }
+  
+  .main-wrap, .article {
+    margin-left: 200px;
+  }
 }
 
 .card {
@@ -221,7 +247,7 @@ a {
 }
 
 .btn {
-  background-color: #F3DF85;
+  background-color: #f3df85;
   color: #612406;
   border: none;
   border-radius: 80px;
