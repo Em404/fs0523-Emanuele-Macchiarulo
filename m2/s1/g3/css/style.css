@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+h1 {
+  font-size: 2rem;  
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #612406;
+  margin-top: 20px;
+}
+
+p {
+  color: #612406;
+}
+
+.container {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: rgb(251, 247, 227);
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 80px;
+  font-weight: 600;
+  color: #612406;
+  display: flex;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+ font-size: 1.4rem;
+ justify-content: center;
+}
+
+.logo-img {
+  max-width: 100%;
+  /* height: auto; */
+}
+
+.item {
+  background-color: #F3DF85;
+  border-radius: 80px;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  align-content: center;
+  padding: 20px;
+}
+
+
+
+/* MAIN ---------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 425px) {
+  h1 {
+    text-align: center;
+  }
+
+  .card {
+    flex-direction: row;
+  }
+
+}
+
+.main-wrap {
+  margin: 40px 0;
+}
+
+.card {
+  margin: 40px 0;
+  border-radius: 40px;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(251, 247, 227);
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  max-width: 100%;
+}
+
+.text-card-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.card-desc {
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.sub-title {
+  font-size: 0.8rem;
+}
+
+.btn {
+  background-color: #F3DF85;
+  color: #612406;
+  border: none;
+  border-radius: 80px;
+  font-weight: 700;
+  padding: 10px 40px;
+  cursor: pointer;
+  margin: 20px 40px;
+}
+
+/* ASIDE ---------------------------------------------------------------------------------------------- */
+.aside-content {
+  background-color: rgb(251, 247, 227);
+  border-radius: 40px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.text-content {
+  margin: 20px 0;
+}
+
+.aside-img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+  h2 {
+    text-align: center;
+  }
+}
