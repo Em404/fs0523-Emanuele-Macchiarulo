@@ -71,8 +71,21 @@ p {
     text-align: center;
   }
 
+}
+
+@media screen and (min-width: 1024px) {
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
   .card {
-    flex-direction: row;
+    max-width: 220px;
+  }
+
+  .card:last-child {
+    display: none;
   }
 
 }
@@ -128,6 +141,23 @@ p {
 }
 
 /* ASIDE ---------------------------------------------------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    max-width: 220px;
+  }
+
+  .card:last-child {
+    display: none;
+  }
+
+}
+
 .aside-content {
   background-color: rgb(251, 247, 227);
   border-radius: 40px;
