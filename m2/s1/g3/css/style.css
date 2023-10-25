@@ -22,11 +22,16 @@ p {
   color: #612406;
 }
 
+a {
+  text-decoration: none;
+  color: #612406;
+}
+
 .container {
   font-family: 'Montserrat', sans-serif;
   padding: 0 20px;
 }
-
+/* HEADER */
 .header {
   background-color: rgb(251, 247, 227);
   margin-top: 10px;
@@ -35,12 +40,14 @@ p {
   font-weight: 600;
   color: #612406;
   display: flex;
+  justify-content: center;
 }
 
 .menu {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
 }
 
 .logo-container {
@@ -50,7 +57,18 @@ p {
 
 .logo-img {
   max-width: 100%;
-  /* height: auto; */
+}
+
+.a-logo img {
+  width: 65px;
+}
+
+.li-item:first-child {
+  flex-basis: 100%;
+}
+
+.link2, .link3, .link4, .link5 {
+  flex-basis: calc(50% - 7px) /* 10px sono la metà del gap */
 }
 
 .item {
@@ -58,12 +76,85 @@ p {
   border-radius: 80px;
   text-align: center;
   margin-bottom: 10px;
-  display: flex;
-  align-content: center;
+  display: block;
+  justify-content: center;
   padding: 20px;
 }
 
+@media screen and (min-width: 576px) {
+ .menu li.li-item {
+  flex-basis: auto;
+ }
 
+ .link1 {
+  order: 3
+ }
+
+ .link2 {
+  order: 1
+ }
+
+ .link3 {
+  order: 2
+ }
+
+ .link4 {
+  order: 4
+ }
+
+ .link5 {
+  order: 5
+ }
+
+}
+
+@media screen and (min-width: 769px) {
+
+  .flex-layout {
+    display: flex;
+    width: 50%;
+  }
+
+  .flex-header {
+    flex: 1;
+  }
+
+  .flex-content{
+    flex: 1;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  .li-item {
+    flex-basis: 100%;
+  }
+
+  .link1 {
+    order: 1
+   }
+  
+   .link2 {
+    order: 2
+   }
+  
+   .link3 {
+    order: 3
+   }
+  
+   .link4 {
+    order: 4
+   }
+  
+   .link5 {
+    order: 5
+   }
+
+}
 
 /* MAIN ---------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 425px) {
@@ -140,41 +231,26 @@ p {
   margin: 20px 40px;
 }
 
-/* ASIDE ---------------------------------------------------------------------------------------------- */
-@media screen and (min-width: 1024px) {
-  .cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+/* ARTICLE ----------------------------------------------------------------------- */
 
-  .card {
-    max-width: 220px;
-  }
+.article {
+  display: flex;
+  flex-wrap: wrap-reverse;
 
-  .card:last-child {
-    display: none;
-  }
+  gap: 30px;
 
+  background-color: #fef7e2;
+  border-radius: 30px;
+  padding: 30px;
+  margin-top: 20px;
+}
+.article-img {
+  flex: 1 1 500px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
-.aside-content {
-  background-color: rgb(251, 247, 227);
-  border-radius: 40px;
-  padding: 20px;
-  margin-top: 10px;
-}
-
-.text-content {
-  margin: 20px 0;
-}
-
-.aside-img {
-  max-width: 100%;
-}
-
-@media screen and (max-width: 425px) {
-  h2 {
-    text-align: center;
-  }
+.article-text {
+  flex: 1 1 400px;
+  line-height: 1.4;
 }
