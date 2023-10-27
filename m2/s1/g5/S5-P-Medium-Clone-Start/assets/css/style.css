@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --yellow: #ffc017;
+  --black: #191919;
+  --green: #1a8917;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.a-items {
+  color: var(--black);
+}
+
+.a-items-w {
+  color: white
+}
+
+.wrapper {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+}
+
+/* NAVBAR */
+.wrap-nav {
+  background-color: var(--yellow);
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: background-color 0.5s;
+}
+
+.white {
+  background-color: white;
+  transition: background-color 0.5s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20%;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.items {
+  padding: 0 20px;
+}
+
+.item {
+  margin-left: 20px;
+  border-radius: 20px;
+  background-color: #191919;
+  padding: 10px;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+.green {
+  background-color: var(--green);
+  transition: background-color 0.5s;
+}
+
+/* HEADER */
+.wrap-header {
+  background-color: var(--yellow);
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  margin-top: 76px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0 60px 20%;
+}
+
+.header-main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: "Spectral", serif;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 20px 0;
+}
+
+.a-header {
+  border-radius: 20px;
+  background-color: #191919;
+  padding: 8px 30px;
+  color: white;
+  margin-top: 20px;
+  width: 100px;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* MAIN */
+.main {
+  padding: 20px 20%;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.trend-title {
+  font-weight: 700;
+}
+
+.wrap-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 80px;
+  flex: 0 0 33.333333%;
+}
+
+.n-card {
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1919197e;
+}
+
+.who {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.card-pic {
+  border-radius: 100px;
+  margin-right: 10px;
+  width: 20px;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* ASIDE - ARTICLE - FOOTER */
+
+.aside {
+  padding: 20px 20%;
+  display: flex;
+}
+
+.aside a {
+  color: #191919;
+}
+
+.wrap-article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 3rem;
+}
+
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.article-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.article-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+}
+
+.wrap-art-img {
+  padding-left: 20px;
+}
+
+.article-img {
+  width: 200px;
+  height: auto;
+}
+
+.aside {
+  display: flex;
+}
+
+/* SECTION */
+.wrap-sf {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-left: 3rem;
+}
+
+.categories {
+  border-bottom: 1px solid #191919;
+  padding-bottom: 20px;
+}
+
+.wrap-categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  
+}
+
+.category {
+  border: 1px solid #191919;
+  padding: 8px 8px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 10px 10px 0;
+  flex: 0 1 calc(100% / 4);
+  font-size: 0.6rem;
+}
+
+.p-categories {
+  font-weight: 600;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 20px;
+}
+
+.footer-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.li-footer-item {
+  margin: 8px 0;
+  display: flex;
+  flex: 0 1 calc(100% / 5)
+}
