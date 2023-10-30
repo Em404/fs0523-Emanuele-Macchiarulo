@@ -1,0 +1,31 @@
+.esercizio {
+  margin: 2rem 0;
+}
+
+.blue-white {
+  background-color: blue;
+  color: white;
+}
+
+.yellow-black {
+  background-color: yellow;
+}
+
+.green-white {
+  background-color: green;
+  color: white;
+}
+
+.red-white {
+  background-color: red;
+  color: white;
+}
+
+.light-blue {
+  background-color: lightskyblue;
+}
+
+.grey-white {
+  background-color: grey;
+  color: white;
+}
