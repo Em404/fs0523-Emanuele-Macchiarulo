@@ -219,12 +219,21 @@ body {
 
 .btn-primary {
   background-color: #0e6cff;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 5px;
 }
 
 .btn-alert {
   background-color: #ff8700;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 5px;
 }
 
 .btn-success {
   background-color: #4caf50;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
