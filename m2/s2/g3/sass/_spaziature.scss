@@ -1,0 +1,31 @@
+$spacing-values: 1 2 3 4 5;
+
+@each $spacing-value in $spacing-values {
+  //padding
+  .pt-#{$spacing-value} {
+    padding-top: $spacing-value + rem;
+  }
+  .pb-#{$spacing-value} {
+    padding-bottom: $spacing-value + rem;
+  }
+  .pr-#{$spacing-value} {
+    padding-right: $spacing-value + rem;
+  }
+  .pl-#{$spacing-value} {
+    padding-left: $spacing-value + rem;
+  }
+
+  //margin
+  .mt-#{$spacing-value} {
+    margin-top: $spacing-value + rem;
+  }
+  .mb-#{$spacing-value} {
+    margin-bottom: $spacing-value + rem;
+  }
+  .mr-#{$spacing-value} {
+    margin-right: $spacing-value + rem;
+  }
+  .ml-#{$spacing-value} {
+    margin-left: $spacing-value + rem;
+  }
+}

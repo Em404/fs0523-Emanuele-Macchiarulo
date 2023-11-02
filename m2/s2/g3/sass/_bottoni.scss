@@ -1,0 +1,7 @@
+@import 'colori';
+
+@each $btn-color, $btn-bg in $btn-colors {
+  .btn-#{$btn-color} {
+    background-color: $btn-bg;
+  }
+}

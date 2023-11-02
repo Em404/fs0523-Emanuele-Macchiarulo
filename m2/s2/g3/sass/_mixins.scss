@@ -1,0 +1,14 @@
+@mixin floating {
+  
+}
+
+@mixin grid($items-per-row) {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    width: calc(100% / #{$items-per-row});
+    box-sizing: border-box;
+    padding: 10px;
+  }
+}
