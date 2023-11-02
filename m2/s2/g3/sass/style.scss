@@ -4,3 +4,12 @@
 @import 'spaziature';
 @import 'bottoni';
 @import 'mixins';
+
+body {
+  color: $text-color;
+}
+
+.bg-color {
+  background-color: $bg-hero;
+}
+

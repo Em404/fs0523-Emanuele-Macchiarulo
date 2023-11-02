@@ -236,4 +236,12 @@ body {
   color: #f4f4f4;
   border: none;
   border-radius: 5px;
+}
+
+body {
+  color: #f4f4f4;
+}
+
+.bg-color {
+  background-color: #640fc5;
 }/*# sourceMappingURL=style.css.map */
