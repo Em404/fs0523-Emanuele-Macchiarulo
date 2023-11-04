@@ -40,3 +40,20 @@ footer a {
   color: white;
   text-decoration: none;
 }
+
+/* badge prfile pic */
+.item {
+  position:relative;
+  display:inline-block;
+}
+.notify-badge{
+  position: absolute;
+  top: 150px;
+  background: black;
+  border: 1px solid white;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  padding: 5px 10px;
+  margin-top: -40px;
+}
