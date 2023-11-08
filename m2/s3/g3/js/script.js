@@ -1,5 +1,5 @@
 const row = document.querySelector("#row");
-const col = document.querySelector("#col");
+// const col = document.querySelector("#col");
 // const img = document.querySelector('#img')
 // const title = document.querySelector('#title')
 // const price = document.querySelector('#price')
@@ -12,7 +12,9 @@ discard.addEventListener("click", () => {
 const createCard = (img, title, price) => {
   console.log(img, title, price);
 
-  const divCol = document.createElement
+  const divCol = document.createElement("div");
+  divCol.classList.add("col-sm-12", "col-md-4", "col-lg-3");
+  divCol.setAttribute("id", "col");
 
   const divCard = document.createElement("div");
   divCard.classList.add("card", "mb-5");
@@ -37,10 +39,12 @@ const createCard = (img, title, price) => {
   const discardBtn = document.createElement("a");
   discardBtn.classList.add("btn", "btn-outline-danger");
   discardBtn.setAttribute("id", "discard");
+  discardBtn.innerHTML = "Scarta";
 
   const addBtn = document.createElement("a");
   addBtn.classList.add("btn", "btn-danger");
   addBtn.setAttribute("id", "add");
+  addBtn.innerHTML = "Aggiungi al carrello";
 
   cardBody.append(cardTitle);
   cardBody.append(cardText);
@@ -50,7 +54,9 @@ const createCard = (img, title, price) => {
   divCard.append(imgCard);
   divCard.append(cardBody);
 
-  return divCard;
+  divCol.append(divCard);
+
+  return divCol;
 };
 
 fetch("https://striveschool-api.herokuapp.com/books")
@@ -58,6 +64,6 @@ fetch("https://striveschool-api.herokuapp.com/books")
   .then((res) => {
     // console.log(res)
     res.forEach((book) => {
-      col.append(createCard(book.img, book.title, book.price));
+      row.append(createCard(book.img, book.title, book.price));
     });
   });
