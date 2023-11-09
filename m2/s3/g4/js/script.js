@@ -9,7 +9,7 @@ const btnTwo = document.querySelector("#buttonTwo");
 const btnHide = document.querySelector("#btnHide");
 const btnView = document.querySelector("#btnView");
 
-function getClone() {
+const getClone = () => {
   let temp = document.getElementsByTagName("template")[0];
   return temp.content.cloneNode(true);
 }
@@ -22,13 +22,17 @@ async function getImage(query) {
       Authorization: apiKey,
     },
   });
-
   const data = await response.json();
   console.log(data);
+  return data
+}
 
-  const imgs = data.photos;
+const replaceImages = (imgs) => {
+
+  // const imgs = data.photos;
   console.log(imgs);
-  imgs.forEach((img) => {
+  imgs.forEach((img, i) => {
+    console.log(img);
     let clone = getClone();
 
     let imgHtml = clone.querySelector("#imgHtml");
@@ -41,18 +45,32 @@ async function getImage(query) {
 
     target.append(clone);
   });
+
 }
 
-btnOne.addEventListener("click", () => {
-  getImage('pizza');
-});
+[btnOne, btnTwo].forEach(button => {
+  button.addEventListener('click', getAndReplace)
+})
 
-btnTwo.addEventListener("click", () => {
-  getImage('hamburger');
-});
+async function getAndReplace() {
+  let query = this.getAttribute('data-query')
+  console.log(query);
+  let immagini = await getImage(query)
+  console.log(immagini.photos);
+  replaceImages(immagini.photos)
+}
 
-btnSearch.addEventListener("click", () => {
+// btnOne.addEventListener("click", () => {
+//   getImage('pizza');
+// });
+
+// btnTwo.addEventListener("click", () => {
+//   getImage('hamburger');
+// });
+
+btnSearch.addEventListener("click", async () => {
   let imgToSearch = document.getElementById("imgToSearch");
-  getImage(imgToSearch.value)
+  let immagini = await getImage(imgToSearch.value)
+  replaceImages(immagini.photos)
   imgToSearch.value = ''
 });
