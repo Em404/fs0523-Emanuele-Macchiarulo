@@ -7,6 +7,51 @@ const getTemplate = () => {
   return template.content.cloneNode(true);
 };
 
+
+
+// prendo i prodotti back office
+async function getProductsBackOffice() {
+  const response = await fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+  });
+  const products = await response.json();
+  console.log(products);
+
+  products.forEach((product) => {
+    let template = getTemplate();
+
+    let productName = template.querySelector("#boProductName");
+    let productBrand = template.querySelector("#boBrand");
+    let productDesc = template.querySelector("#boProductDesc");
+    let productPrice = template.querySelector("#boPrice");
+    // let productDetails = template.querySelector("#details");
+    let productImg = template.querySelector("#boImg");
+
+    productName.innerText = product.name
+    productBrand.innerText = product.brand
+    productDesc.innerText = product.description
+    productPrice.innerText = product.price
+    // productDetails.href = "update-product.html?="+products.id
+    productImg.src = product.imageUrl
+
+    // console.log(template);
+
+    document.querySelector("#target").append(template)
+  });
+
+  return products;
+}
+
+const backOfficeAreaBtn = document.querySelector("#backOfficeArea")
+backOfficeAreaBtn && backOfficeAreaBtn.addEventListener("click", () => {
+  getProductsBackOffice();
+  location.href = "../g5/back-office.html"
+})
+
 // prendo i prodotti
 async function getProducts() {
   const response = await fetch(apiUrl, {
@@ -34,9 +79,9 @@ async function getProducts() {
     productDesc.innerText = product.description
     productPrice.innerText = product.price
     // productDetails.href = "update-product.html?="+products.id
-    productImg.innerText = product.imageUrl
+    productImg.src = product.imageUrl
 
-    console.log(template);
+    // console.log(template);
 
     document.querySelector("#target").append(template)
   });
@@ -50,10 +95,10 @@ getProducts()
 const saveNewProductBtn = document.querySelector("#add");
 
 const newProduct = {
-  'name': 'suit',
-  'description': 'Good Choise',
-  'brand': 'Rip Curl',
-  'imageUrl': 'https://www.thenauticstore.com/5585-large_default/3mm-chest-zip-mute-da-surf-modello-2022-black.jpg',
+  'name': '',
+  'description': '',
+  'brand': '',
+  'imageUrl': '',
   'price': 100
 }
 
