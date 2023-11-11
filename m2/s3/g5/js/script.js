@@ -7,50 +7,15 @@ const getTemplate = () => {
   return template.content.cloneNode(true);
 };
 
-
-
-// prendo i prodotti back office
-async function getProductsBackOffice() {
-  const response = await fetch(apiUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-  });
-  const products = await response.json();
-  console.log(products);
-
-  products.forEach((product) => {
-    let template = getTemplate();
-
-    let productName = template.querySelector("#boProductName");
-    let productBrand = template.querySelector("#boBrand");
-    let productDesc = template.querySelector("#boProductDesc");
-    let productPrice = template.querySelector("#boPrice");
-    // let productDetails = template.querySelector("#details");
-    let productImg = template.querySelector("#boImg");
-
-    productName.innerText = product.name
-    productBrand.innerText = product.brand
-    productDesc.innerText = product.description
-    productPrice.innerText = product.price
-    // productDetails.href = "update-product.html?="+products.id
-    productImg.src = product.imageUrl
-
-    // console.log(template);
-
-    document.querySelector("#target").append(template)
-  });
-
-  return products;
-}
-
 const backOfficeAreaBtn = document.querySelector("#backOfficeArea")
-backOfficeAreaBtn && backOfficeAreaBtn.addEventListener("click", () => {
-  getProductsBackOffice();
+backOfficeAreaBtn.addEventListener("click", () => {
   location.href = "../g5/back-office.html"
 })
+
+// const detailsBtn = document.querySelector("#details")
+// detailsBtn.addEventListener("click", () => {
+//   location.href = "../g5/product-info.html"
+// })
 
 // prendo i prodotti
 async function getProducts() {
@@ -71,14 +36,14 @@ async function getProducts() {
     let productBrand = template.querySelector("#brand");
     let productDesc = template.querySelector("#productDesc");
     let productPrice = template.querySelector("#price");
-    // let productDetails = template.querySelector("#details");
+    let productDetails = template.querySelector("#details");
     let productImg = template.querySelector("#img");
 
     productName.innerText = product.name
     productBrand.innerText = product.brand
     productDesc.innerText = product.description
     productPrice.innerText = product.price
-    // productDetails.href = "update-product.html?="+products.id
+    productDetails.href = "product-info.html?id="+product._id
     productImg.src = product.imageUrl
 
     // console.log(template);
@@ -90,62 +55,3 @@ async function getProducts() {
 }
 
 getProducts()
-
-// salva nuovo prodotto
-const saveNewProductBtn = document.querySelector("#add");
-
-const newProduct = {
-  'name': '',
-  'description': '',
-  'brand': '',
-  'imageUrl': '',
-  'price': 100
-}
-
-saveNewProductBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  newProduct.name = document.querySelector("#newName").value;
-  newProduct.brand = document.querySelector("#newBrand").value;
-  newProduct.description = document.querySelector("#newDesc").value;
-  newProduct.price = Number(document.querySelector("#newPrice").value);
-  newProduct.imageUrl = document.querySelector("#newImg").value;
-
-  fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(newProduct),
-  }).then((res) => res.json())
-  .then(products => {
-    console.log(products);
-  })
-
-  emptyFieldAddProduct();
-
-});
-
-const emptyFieldAddProduct = () => {
-  const newProductName = document.querySelector("#newName");
-  newProductName.value = "";
-
-  const newProductBrand = document.querySelector("#newBrand");
-  newProductBrand.value = "";
-
-  const newProductDesc = document.querySelector("#newDesc");
-  newProductDesc.value = "";
-
-  const newProductPrice = Number(document.querySelector("#newPrice"));
-  newProductPrice.valueOf = "";
-
-  const newProductImg = document.querySelector("#newImg");
-  newProductImg.value = "";
-}
-
-// resetta form nuovo prodotto
-const resetBtn = document.querySelector("#newReset");
-resetBtn.addEventListener("click", () => {
-  emptyFieldAddProduct();
-});
