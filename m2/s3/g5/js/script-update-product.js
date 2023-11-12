@@ -83,7 +83,7 @@ modifyProductBtn.addEventListener("click", (e) => {
   })
   .then(res => res.json())
 
-  location.href = "/back-office.html"
+  // location.href = "/back-office.html"
 });
 
 // async function updateProductData() {
