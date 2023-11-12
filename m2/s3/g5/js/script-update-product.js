@@ -1,15 +1,14 @@
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/";
-const apiKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRlMGExMTMyNWM5NzAwMTg3ZjlmNzciLCJpYXQiOjE2OTk2MTMyMDEsImV4cCI6MTcwMDgyMjgwMX0.YvXqXfAJXB9OqrxYaJfH1svJQd7gVdPvo8EIW-u-epw";
-
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRlMGExMTMyNWM5NzAwMTg3ZjlmNzciLCJpYXQiOjE2OTk2MTMyMDEsImV4cCI6MTcwMDgyMjgwMX0.YvXqXfAJXB9OqrxYaJfH1svJQd7gVdPvo8EIW-u-epw";
 
 let url = new URLSearchParams(location.search);
 let selectedID=url.get("id");
 console.log(selectedID);
 console.log(url);
+console.log(apiUrl + selectedID);
 
 async function getProductData() {
-  const response = await fetch(`${apiUrl}${selectedID}`, {
+  const response = await fetch(apiUrl + selectedID, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -49,9 +48,7 @@ const fillData = (productResp) => {
 };
 
 // modifico uno prodotto
-const modifyProductBtn = document.querySelector("#modify");
-
-const product = {
+const productUpdated = {
   'name': '',
   'description': '',
   'brand': '',
@@ -59,50 +56,48 @@ const product = {
   'price': 100
 }
 
-async function updateProductData() {
-  const response = await fetch(`${apiUrl}${selectedID}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-  });
-  const productResp = await response.json();
-  console.log(productResp);
-  return productResp;
-}
-
+const modifyProductBtn = document.querySelector("#modify");
 
 modifyProductBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  product.name = document.querySelector("#pName").value;
-  product.brand = document.querySelector("#pBrand").value;
-  product.description = document.querySelector("#pDesc").value;
-  product.price = parseFloat(document.querySelector("#pPrice").value);
-  product.imageUrl = document.querySelector("#pImg").value;
+  productUpdated.name = document.querySelector("#pName").value;
+  productUpdated.brand = document.querySelector("#pBrand").value;
+  productUpdated.description = document.querySelector("#pDesc").value;
+  productUpdated.price = parseFloat(document.querySelector("#pPrice").value);
+  productUpdated.imageUrl = document.querySelector("#pImg").value;
 
   console.log(selectedID);
-  console.log(product);
+  console.log(productUpdated);
+  console.log(apiUrl + selectedID);
 
-  updateProductData();
+  // updateProductData();
 
-  // fetch(`${apiUrl}${selectedID}`, {
-  //   method: "PATCH",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Authorization: `Bearer ${apiKey}`,
-  //   },
-  //   body: JSON.stringify(product),
-  // })
-  //   .then((res) => {
-  //     console.log(res);
-  //     res.json()})
-  //   .then((products) => {
-  //     console.log(products);
-  //     location.href = "../g5/back-office.html";
-  //   });
+  fetch(apiUrl + selectedID, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(productUpdated)
+  })
+  .then(res => res.json())
+
+  location.href = "/back-office.html"
 });
+
+// async function updateProductData() {
+//   const response = await fetch(apiUrl + selectedID,  {
+//     method: "PATCH",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${apiKey}`,
+//     },
+//     body: JSON.stringify(productUpdated)
+//   });
+//   const updatedProductResp = await response.json();
+//   console.log(updatedProductResp);
+// }
 
 // resetta form modifica prodotto
 const resetBtn = document.querySelector("#reset");
