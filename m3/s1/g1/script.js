@@ -7,13 +7,13 @@ const play = (playerOne, playerTwo) => {
     const diffPlayerOne = Math.abs(randomNumber - playerOne);
     const diffPlayerTwo = Math.abs(randomNumber - playerTwo);
     if (diffPlayerOne === diffPlayerTwo) {
-        return "È un pareggio!";
+        return "Pareggio!";
     }
     else if (diffPlayerOne < diffPlayerTwo) {
-        return `Il giocatore 1 ha vinto! Il numero casuale era ${randomNumber}.`;
+        return `Vince il giocatore 1! Il numero casuale era ${randomNumber}.`;
     }
     else {
-        return `Il giocatore 2 ha vinto! Il numero casuale era ${randomNumber}.`;
+        return `Vince il giocatore 2! Il numero casuale era ${randomNumber}.`;
     }
 };
 const numberPlayerOne = 13;
