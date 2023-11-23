@@ -22,6 +22,34 @@ class Cloth {
         this.disponibile = _disponibile;
         this.saldo = _saldo;
     }
+    //Alternativa 1
+    // constructor(
+    //   public _id:number,
+    //   public _codprod:number,
+    //   public _collezione:string,
+    //   public _capo:string,
+    //   public _modello:number,
+    //   public _quantita:number,
+    //   public _colore:string,
+    //   public _prezzoivaesclusa:number,
+    //   public _prezzoivainclusa:number,
+    //   public _disponibile:string,
+    //   public _saldo:number
+    // ) {}
+    //Alternativa 2
+    // constructor(
+    //   _id!:number,
+    //   _codprod!:number,
+    //   _collezione!:string,
+    //   _capo:string,
+    //   _modello!:number,
+    //   _quantita!:number,
+    //   _colore!:string,
+    //   _prezzoivaesclusa!:number,
+    //   _prezzoivainclusa!:number,
+    //   _disponibile!:string,
+    //   _saldo!:numbe
+    // )
     getSaldoCapo() {
         return this.prezzoivainclusa * (this.saldo / 100);
     }
