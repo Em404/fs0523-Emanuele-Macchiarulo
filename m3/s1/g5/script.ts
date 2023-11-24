@@ -4,7 +4,7 @@ interface ISmartphone {
   costoMinuto: number; //il costo delle chiamate
 
   // extra
-  registroChiamate: Chiamata[];
+  registroChiamate: Chiamata[]; //proprietà registroChiamate che contenga un array di oggetti
 
   ricarica(euro: number): void; //permette di incrementare il credito residuo( carica )
   numero404(): string; //mostra il credito residuo (comprensivo di valuta)
@@ -13,9 +13,8 @@ interface ISmartphone {
   azzeraChiamata(): void; //azzera il contatore di chiamate
 
   // extra
-  mostraRegistroChiamate(): void;
-  filtraChiamatePerDataOra(dataOra: Date): Chiamata[];
-  chiama(numero: number): void;
+  mostraRegistroChiamate(): void; //mostra tutte le chiamate effettuate
+  filtraChiamatePerDataOra(dataOra: Date): Chiamata[]; //mostra solo le chiamate effettuate in una determinata data ed ora
 }
 
 // extra
@@ -32,7 +31,6 @@ class Smartphone implements ISmartphone {
 
   // extra
   registroChiamate: Chiamata[] = [];
-  private idChiamata: number = 1;
 
   constructor(_carica: number, _numeroChiamate: number, _costoMinuto: number) {
     this.carica = _carica;
@@ -56,6 +54,13 @@ class Smartphone implements ISmartphone {
     this.numeroChiamate++;
     let costoChiamata = min * this.costoMinuto;
     this.carica = this.carica - costoChiamata;
+
+    const nuovaChiamata: Chiamata = {
+      id: this.numeroChiamate,
+      durata: min,
+      dataOra: new Date(),
+    };
+    this.registroChiamate.push(nuovaChiamata);
   }
 
   azzeraChiamata(): void {
@@ -64,15 +69,15 @@ class Smartphone implements ISmartphone {
 
   // extra
   mostraRegistroChiamate(): void {
-
+    console.log("Registro chiamate:");
+    this.registroChiamate.forEach((chiamata) => {
+      console.log(`ID: ${chiamata.id}, Durata: ${chiamata.durata} secondi, Data/Ora: ${chiamata.dataOra}`);
+    });
   }
 
   filtraChiamatePerDataOra(dataOra: Date): Chiamata[] {
-  
-  }
-
-  chiama(numero: number): void {
-
+    const chiamateFiltrate = this.registroChiamate.filter((chiamata) => chiamata.dataOra.getTime() === dataOra.getTime());
+    return chiamateFiltrate;
   }
 }
 
@@ -92,10 +97,15 @@ samsung.chiamata(1);
 console.log(samsung);
 console.log(samsung.numero404());
 console.log(samsung.getNumeroChiamate());
+
+samsung.mostraRegistroChiamate()
+
+const dataOraFiltro = new Date(); 
+const chiamateFiltrate = samsung.filtraChiamatePerDataOra(dataOraFiltro);
+console.log("Chiamate filtrate per data/ora:", chiamateFiltrate);
+
 samsung.azzeraChiamata();
 console.log(samsung);
-
-
 
 // pixel.ricarica(10);
 // console.log(pixel);

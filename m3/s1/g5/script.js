@@ -3,7 +3,6 @@ class Smartphone {
     constructor(_carica, _numeroChiamate, _costoMinuto) {
         // extra
         this.registroChiamate = [];
-        this.idChiamata = 1;
         this.carica = _carica;
         this.numeroChiamate = _numeroChiamate;
         this.costoMinuto = _costoMinuto;
@@ -21,16 +20,26 @@ class Smartphone {
         this.numeroChiamate++;
         let costoChiamata = min * this.costoMinuto;
         this.carica = this.carica - costoChiamata;
+        const nuovaChiamata = {
+            id: this.numeroChiamate,
+            durata: min,
+            dataOra: new Date(),
+        };
+        this.registroChiamate.push(nuovaChiamata);
     }
     azzeraChiamata() {
         this.numeroChiamate = 0;
     }
     // extra
     mostraRegistroChiamate() {
+        console.log("Registro chiamate:");
+        this.registroChiamate.forEach((chiamata) => {
+            console.log(`ID: ${chiamata.id}, Durata: ${chiamata.durata} secondi, Data/Ora: ${chiamata.dataOra}`);
+        });
     }
     filtraChiamatePerDataOra(dataOra) {
-    }
-    chiama(numero) {
+        const chiamateFiltrate = this.registroChiamate.filter((chiamata) => chiamata.dataOra.getTime() === dataOra.getTime());
+        return chiamateFiltrate;
     }
 }
 let samsung = new Smartphone(10, 0, 1);
@@ -48,6 +57,10 @@ samsung.chiamata(1);
 console.log(samsung);
 console.log(samsung.numero404());
 console.log(samsung.getNumeroChiamate());
+samsung.mostraRegistroChiamate();
+const dataOraFiltro = new Date();
+const chiamateFiltrate = samsung.filtraChiamatePerDataOra(dataOraFiltro);
+console.log("Chiamate filtrate per data/ora:", chiamateFiltrate);
 samsung.azzeraChiamata();
 console.log(samsung);
 // pixel.ricarica(10);
