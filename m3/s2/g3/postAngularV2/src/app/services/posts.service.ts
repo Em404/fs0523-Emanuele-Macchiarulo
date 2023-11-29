@@ -20,7 +20,7 @@ export class PostsService {
       title:
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
-      topic: 'politic',
+      topic: 'politica',
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ export class PostsService {
       title:
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: false,
-      topic: 'politic',
+      topic: 'politica',
     },
   ];
 
