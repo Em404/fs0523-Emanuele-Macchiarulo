@@ -14,4 +14,10 @@ export class ActiveComponent {
   ngOnInit() {
     this.posts = this.postsSvc.getActivePosts();
   }
+
+  toggleInactive(post:IPost): void {
+    this.postsSvc.togglePost(post)
+    this.posts = this.postsSvc.getActivePosts()
+  }
+
 }
