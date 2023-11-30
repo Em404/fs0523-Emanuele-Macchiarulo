@@ -4,4 +4,5 @@ export interface IPost {
   title:string
   active:boolean
   topic:string
+  author:string
 }

@@ -13,6 +13,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
       topic: 'news',
+      author: 'Mimmo Flowers'
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
       topic: 'politica',
+      author: 'Mimmo Modem'
     },
     {
       id: 3,
@@ -29,6 +31,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
       topic: 'education',
+      author: 'Mimmo'
     },
     {
       id: 4,
@@ -37,6 +40,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: false,
       topic: 'news',
+      author: 'Mimmone'
     },
     {
       id: 5,
@@ -45,6 +49,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: false,
       topic: 'politica',
+      author: 'Mimmone Nazionale'
     },
   ];
 
