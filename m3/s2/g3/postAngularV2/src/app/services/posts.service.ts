@@ -5,6 +5,7 @@ import { IPost, IUser } from '../models/i-post';
   providedIn: 'root',
 })
 export class PostsService {
+  // posts
   posts: IPost[] = [
     {
       id: 1,
@@ -53,6 +54,7 @@ export class PostsService {
     },
   ];
 
+  // users
   users: IUser[] = [
     {
       id: 0,
@@ -68,6 +70,7 @@ export class PostsService {
     },
   ];
 
+  // metodi posts
   getAllPosts() {
     return this.posts;
   }
@@ -84,6 +87,7 @@ export class PostsService {
     post.active = !post.active;
   }
 
+  // metodi users
   getAllUsers() {
     return this.users;
   }
