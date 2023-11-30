@@ -75,6 +75,10 @@ export class PostsService {
     return this.posts;
   }
 
+  getPostById(id:number) {
+    return this.posts.filter((p) => p.id == id)
+  }
+
   getActivePosts() {
     return this.posts.filter((p) => p.active);
   }
