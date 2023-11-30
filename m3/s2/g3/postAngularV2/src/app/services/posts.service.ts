@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IPost } from '../models/i-post';
+import { IPost, IUser } from '../models/i-post';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
       topic: 'news',
-      author: 'Mimmo Flowers'
+      author: 'Mimmo Flowers',
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
       topic: 'politica',
-      author: 'Mimmo Modem'
+      author: 'Mimmo Modem',
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: true,
       topic: 'education',
-      author: 'Mimmo'
+      author: 'Mimmo',
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: false,
       topic: 'news',
-      author: 'Mimmone'
+      author: 'Mimmone',
     },
     {
       id: 5,
@@ -49,7 +49,22 @@ export class PostsService {
         'Dolor velit sint tempor culpa cupidatat ipsum do ad tempor etusmod.',
       active: false,
       topic: 'politica',
-      author: 'Mimmone Nazionale'
+      author: 'Mimmone Nazionale',
+    },
+  ];
+
+  users: IUser[] = [
+    {
+      id: 0,
+      name: 'Mimmo',
+      email: 'mimmo@mail.com',
+      role: 'user',
+    },
+    {
+      id: 0,
+      name: 'Flowers',
+      email: 'flowers@mail.com',
+      role: 'admin',
     },
   ];
 
@@ -65,8 +80,11 @@ export class PostsService {
     return this.posts.filter((p) => !p.active);
   }
 
-  togglePost(post:IPost): void {
-    post.active = !post.active
+  togglePost(post: IPost): void {
+    post.active = !post.active;
   }
 
+  getAllUsers() {
+    return this.users;
+  }
 }

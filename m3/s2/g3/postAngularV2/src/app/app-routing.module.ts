@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ActiveComponent } from './components/active/active.component';
 import { InactiveComponent } from './components/inactive/inactive.component';
 import { HomeComponent } from './components/home/home.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   // {
@@ -25,6 +26,11 @@ const routes: Routes = [
     path:'post-inattivi',
     component: InactiveComponent,
     title:'The POSTS | Posts inattivi'
+  },
+  {
+    path:'users',
+    component: UsersComponent,
+    title:'The POSTS | Utenti'
   }
 ];
 
