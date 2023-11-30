@@ -6,13 +6,13 @@ import { InactiveComponent } from './components/inactive/inactive.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: AppComponent,
+  //   title:'Home page'
+  // },
   {
     path: '',
-    component: AppComponent,
-    title:'Home page'
-  },
-  {
-    path: 'tutti-i-post',
     component: HomeComponent,
     title:'The POSTS | Home'
   },
