@@ -25,7 +25,7 @@ export class CreateComponent {
       this.newTodo = {
         completed:false
       }
-      this.router.navigate(['/'])
+
     })
   }
 }

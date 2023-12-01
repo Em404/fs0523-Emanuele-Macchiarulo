@@ -15,18 +15,21 @@ export class TodoComponent {
     this.loadTodos();
   }
 
+  // get todo non completati
   loadTodos(): void {
     this.todoSvc.getToDo().then((todos) => {
       this.todos = todos;
     });
   }
 
+  // toggle todo
   done(id: number): void {
     this.todoSvc.toggleCompletion(id).then(() => {
       this.loadTodos();
     });
   }
 
+  // eliminazione todo
   delete(id: number) {
     if (!id) return;
     this.todoSvc.delete(id).then((res) => {
@@ -35,7 +38,30 @@ export class TodoComponent {
     });
   }
 
+  // update todo
   update() {
 
   }
+
+  // creazione nuovo todo
+  newTodo:Partial<Todo> = {
+    completed:false
+  };
+
+  oldTodo:Todo|null = null;
+  loading:boolean = false;
+
+  // salva nuovo todo
+  save(){
+    this.loading = true;
+    this.todoSvc.create(this.newTodo).then(res => {
+      this.loading = false
+      this.oldTodo = res;
+      this.newTodo = {
+        completed:false
+      }
+      this.loadTodos();
+    })
+  }
+
 }

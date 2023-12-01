@@ -9,6 +9,7 @@ import { DoneComponent } from './pages/done/done.component';
 import { FormsModule } from '@angular/forms';
 import { NgPipesModule } from 'ngx-pipes';
 import { CreateComponent } from './pages/create/create.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreateComponent } from './pages/create/create.component';
     HeaderComponent,
     TodoComponent,
     DoneComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

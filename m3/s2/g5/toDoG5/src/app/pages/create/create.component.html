@@ -2,3 +2,12 @@
   <input type="text" required placeholder="Nuovo ToDo!" [(ngModel)]="newTodo.title" name="title" class="form-control">
   <button (click)="save()" class="btn btn-success">Salva</button>
 </form>
+
+<div *ngIf="loading" class="alert alert-warning">
+  Salvataggio todo in corso
+</div>
+
+<div *ngIf="oldTodo">
+    Hai creato il task {{oldTodo.title}}
+</div>
+

@@ -2,7 +2,11 @@
   Caricamento in corso
 </div>
 <div *ngIf="todos.length">
-  <app-create></app-create>
+  <!-- <app-create></app-create> -->
+  <form>
+    <input type="text" required placeholder="Nuovo ToDo!" [(ngModel)]="newTodo.title" name="title" class="form-control">
+    <button (click)="save()" class="btn btn-success">Salva</button>
+  </form>
   <table class="table">
     <tr>
       <th>#</th>
@@ -14,7 +18,7 @@
       <td>{{t.title}}</td>
       <td>
         <button (click)="done(t.id)">Fatto</button>
-        <button (click)="update()">Modifica</button>
+        <button ><a [routerLink]="['/','edit',t.id]">Modifica</a></button>
         <button (click)="delete(t.id)">Elimina</button>
       </td>
     </tr>
