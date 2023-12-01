@@ -16,15 +16,20 @@ const routes: Routes = [
     title:'To Do List | Completed!'
   },
   {
-    path:'',
-    component: TodoComponent,
-    children:[
-      {
-        path: 'edit/:id',// "/menu/edit/:id"
-        component: EditComponent
-      },
-    ]
+    path: 'edit/:id',
+    component: EditComponent,
+    title:'To Do List | Edit!'
   },
+  // {
+  //   path:'',
+  //   component: TodoComponent,
+  //   children:[
+  //     {
+  //       path: 'edit/:id',
+  //       component: EditComponent
+  //     },
+  //   ]
+  // },
 ];
 
 @NgModule({

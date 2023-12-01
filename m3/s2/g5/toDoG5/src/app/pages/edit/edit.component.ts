@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TodoService } from '../../services/todo.service';
 import { Todo } from '../../models/todo';
 
@@ -12,7 +12,8 @@ export class EditComponent {
 
   constructor(
     private route: ActivatedRoute,//per ottenere dati sulla rotta attiva
-    private todoSvc:TodoService
+    private todoSvc:TodoService,
+    private router: Router
     ){}
   todo!:Todo;
 
@@ -26,6 +27,8 @@ export class EditComponent {
   edit(){
     this.todoSvc.update(this.todo).then( res => {
     })
+    alert(`Task modificato`);
+    this.router.navigate(['/']);
   }
 
 }

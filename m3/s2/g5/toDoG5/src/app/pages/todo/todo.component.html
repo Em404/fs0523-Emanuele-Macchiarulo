@@ -18,10 +18,11 @@
       <td>{{t.title}}</td>
       <td>
         <button (click)="done(t.id)">Fatto</button>
-        <button ><a [routerLink]="['/','edit',t.id]">Modifica</a></button>
+        <button><a [routerLink]="['edit',t.id]">Modifica</a></button>
         <button (click)="delete(t.id)">Elimina</button>
       </td>
     </tr>
   </table>
 </div>
+<router-outlet></router-outlet>
 
