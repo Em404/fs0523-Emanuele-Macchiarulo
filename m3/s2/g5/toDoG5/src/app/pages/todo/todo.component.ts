@@ -34,4 +34,8 @@ export class TodoComponent {
       alert(`Task con id ${id} eliminato`);
     });
   }
+
+  update() {
+
+  }
 }

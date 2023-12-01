@@ -8,13 +8,15 @@ import { TodoComponent } from './pages/todo/todo.component';
 import { DoneComponent } from './pages/done/done.component';
 import { FormsModule } from '@angular/forms';
 import { NgPipesModule } from 'ngx-pipes';
+import { CreateComponent } from './pages/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TodoComponent,
-    DoneComponent
+    DoneComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

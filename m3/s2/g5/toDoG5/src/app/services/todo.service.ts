@@ -38,6 +38,17 @@ export class TodoService {
     }).then((res) => res.json());
   }
 
+  update(todo:Todo):Promise<Todo>{
+    todo = this.toBoolean(todo);
+    return fetch(this.apiUrl+`/${todo.id}`,{
+      method:'PUT',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(todo)
+    }).then(res => res.json())
+  }
+
   delete(id: number): Promise<Todo> {
     return fetch(this.apiUrl + `/${id}`, {
       method: 'DELETE',

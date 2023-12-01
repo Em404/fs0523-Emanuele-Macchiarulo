@@ -1,19 +1,23 @@
 <div *ngIf="!todos.length" class="alert alert-info">
   Caricamento in corso
 </div>
+<div *ngIf="todos.length">
+  <app-create></app-create>
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>Titolo</th>
+      <th>Azioni</th>
+    </tr>
+    <tr *ngFor="let t of todos">
+      <td>{{t.id}}</td>
+      <td>{{t.title}}</td>
+      <td>
+        <button (click)="done(t.id)">Fatto</button>
+        <button (click)="update()">Modifica</button>
+        <button (click)="delete(t.id)">Elimina</button>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<table *ngIf="todos.length" class="table">
-  <tr>
-    <th>#</th>
-    <th>Titolo</th>
-    <th>Azioni</th>
-  </tr>
-  <tr *ngFor="let t of todos">
-    <td>{{t.id}}</td>
-    <td>{{t.title}}</td>
-    <td>
-      <button (click)="done(t.id)">Fatto</button>
-      <button (click)="delete(t.id)">Elimina</button>
-    </td>
-  </tr>
-</table>
