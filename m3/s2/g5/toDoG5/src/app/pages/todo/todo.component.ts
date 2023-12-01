@@ -38,11 +38,6 @@ export class TodoComponent {
     });
   }
 
-  // update todo
-  update() {
-
-  }
-
   // creazione nuovo todo
   newTodo:Partial<Todo> = {
     completed:false

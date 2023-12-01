@@ -1,6 +1,14 @@
+.header {
+  margin-bottom: 2rem;
+}
+
 .list {
   display: flex;
   list-style: none;
+}
+
+.list-item {
+  padding: 0 2rem;
 }
 
 .a-list-item {

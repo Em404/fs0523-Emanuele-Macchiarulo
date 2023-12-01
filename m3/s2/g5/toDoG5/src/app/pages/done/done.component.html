@@ -12,8 +12,8 @@
     <td>{{t.id}}</td>
     <td>{{t.title}}</td>
     <td>
-      <button (click)="restore(t.id)">Ripristina</button>
-      <button (click)="delete(t.id)">Elimina</button>
+      <button class="btn btn-edit" (click)="restore(t.id)">Ripristina</button>
+      <button class="btn btn-delete" (click)="delete(t.id)">Elimina</button>
     </td>
   </tr>
 </table>

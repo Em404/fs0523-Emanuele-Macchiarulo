@@ -3,9 +3,9 @@
 </div>
 <div *ngIf="todos.length">
   <!-- <app-create></app-create> -->
-  <form>
-    <input type="text" required placeholder="Nuovo ToDo!" [(ngModel)]="newTodo.title" name="title" class="form-control">
-    <button (click)="save()" class="btn btn-success">Salva</button>
+  <form class="form">
+    <input type="text" required placeholder="Nuovo ToDo!" [(ngModel)]="newTodo.title" name="title" class="form-control input">
+    <button (click)="save()" class="btn-form">Salva</button>
   </form>
   <table class="table">
     <tr>
@@ -17,9 +17,9 @@
       <td>{{t.id}}</td>
       <td>{{t.title}}</td>
       <td>
-        <button (click)="done(t.id)">Fatto</button>
-        <button><a [routerLink]="['edit',t.id]">Modifica</a></button>
-        <button (click)="delete(t.id)">Elimina</button>
+        <button class="btn btn-done" (click)="done(t.id)">Fatto</button>
+        <button class="btn btn-edit"><a [routerLink]="['edit',t.id]">Modifica</a></button>
+        <button class="btn btn-delete" (click)="delete(t.id)">Elimina</button>
       </td>
     </tr>
   </table>
