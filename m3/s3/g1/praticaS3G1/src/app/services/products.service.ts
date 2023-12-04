@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, map } from 'rxjs';
 import { Iproduct } from '../models/iproduct';
+
+type responseData = {
+  products: Iproduct[]
+}
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +23,9 @@ export class ProductsService {
   favorites$ = this.favoritesSubject.asObservable();
   cart$ = this.cartSubject.asObservable();
 
-  getAll():Observable<Iproduct[]> {
-    return this.http.get<Iproduct[]>(this.apiUrl)
+  getAll() {
+    return this.http.get<responseData>(this.apiUrl)
+    .pipe(map(r => r.products))
   }
 
   toggleFavorite(product: Iproduct): void {

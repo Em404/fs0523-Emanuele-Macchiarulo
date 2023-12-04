@@ -14,6 +14,8 @@ export class CartComponent {
   ngOnInit(): void {
     this.productSvc.cart$.subscribe((cart) => {
       this.cart = cart;
+      console.log(cart);
+
     });
   }
 }
