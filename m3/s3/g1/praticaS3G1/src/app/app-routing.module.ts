@@ -7,13 +7,19 @@ import { CartComponent } from './components/cart/cart.component';
 const routes: Routes = [
   {
     path: '',
-    component: ProductsComponent },
+    component: ProductsComponent,
+    title:'Shopping | Home'
+  },
   {
     path: 'favorites',
-    component: FavoritesComponent },
+    component: FavoritesComponent,
+    title:'Shopping | Preferiti'
+  },
   {
     path: 'cart',
-    component: CartComponent },
+    component: CartComponent,
+    title:'Shopping | Carrello'
+  },
 ];
 
 @NgModule({

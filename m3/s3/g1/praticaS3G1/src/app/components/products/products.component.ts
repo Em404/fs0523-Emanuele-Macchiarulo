@@ -5,17 +5,17 @@ import { Iproduct } from '../../models/iproduct';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  styleUrl: './products.component.scss',
 })
 export class ProductsComponent {
-  showClass:boolean = false;
-
-  constructor(private productSvc:ProductsService){}
+  constructor(private productSvc: ProductsService) {}
   products: Iproduct[] = [];
 
   ngOnInit(): void {
-    this.productSvc.getAll().subscribe(products => {
+    this.productSvc.getAll().subscribe((products) => {
       this.products = products;
+      console.log(products);
+
     });
   }
 
@@ -26,5 +26,4 @@ export class ProductsComponent {
   addToCart(product: Iproduct): void {
     this.productSvc.addToCart(product);
   }
-
 }
