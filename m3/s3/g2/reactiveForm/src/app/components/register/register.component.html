@@ -1,1 +1,90 @@
-<p>register works!</p>
+<!--[formgroup]="form" collega l'attuale form alla proprietà form che si trova nel ts del component-->
+<form [formGroup]="form">
+  <!-- nome -->
+  <input
+    type="text"
+    class="form-control mb-3"
+    formControlName="nome"
+    placeholder="Il tuo nome"
+  />
+  <div
+    *ngIf="!isValid('nome') && isTouched('nome')"
+    class="alert alert-warning"
+  >
+    Devi inserire il nome
+  </div>
+
+  <!-- cognome -->
+  <input
+    type="text"
+    class="form-control mb-3"
+    formControlName="cognome"
+    placeholder="Il tuo cognome"
+  />
+  <div
+    *ngIf="!isValid('cognome') && isTouched('cognome')"
+    class="alert alert-warning"
+  >
+    Devi inserire il cognome
+  </div>
+
+  <!-- sesso -->
+  <label for="gender">Sesso:</label>
+  <select id="gender" formControlName="gender"  class="form-select mb-3" aria-label="Default select example">
+    <option *ngFor="let genderOption of genders" [value]="genderOption">
+      {{ genderOption }}
+    </option>
+  </select>
+
+  <!-- mail, username, password -->
+  <div formGroupName="authData" class="form-row row">
+    <div class="form-group">
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Scrivi la tua email"
+        class="form-control mb-3"
+      />
+    </div>
+    <div
+      *ngIf="!isValid('authData.email') && isTouched('authData.email')"
+      class="alert alert-warning"
+    >
+      Devi inserire l'email
+    </div>
+    <!-- {{getCustomMessage('authData.email')}} -->
+
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Scrivi il tuo username"
+        class="form-control mb-3"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Scrivi la tua password"
+        class="form-control mb-3"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        formControlName="confermaPassword"
+        placeholder="Conferma la tua password"
+        class="form-control mb-3"
+      />
+    </div>
+  </div>
+
+  <!-- bio -->
+  <div class="form-floating">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="bio"></textarea>
+    <label for="floatingTextarea">Breve descrizione di te</label>
+  </div>
+
+  <button (click)="send()" [disabled]="form.invalid" class="btn btn-primary my-3">Invia</button>
+</form>
