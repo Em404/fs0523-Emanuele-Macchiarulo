@@ -1,0 +1,18 @@
+<form (ngSubmit)="submit(f)" #f="ngForm">
+  <div ngModelGroup="authData" #authGroup="ngModelGroup" class="form-row row">
+    <div class="container">
+      <input type="email" #email="ngModel" required ngModel [pattern]="emailRegEx" name="email" placeholder="Scrivi la tua email" class="form-control mb-3">
+      <div *ngIf="isEmail(email)" class="alert alert-warning">
+        La mail non segue il formato richiesto
+      </div>
+      <div *ngIf="isEmpty(email)" class="alert alert-warning">
+        Inserisci la mail
+      </div>
+      <input type="password" ngModel required name="password" placeholder="Scrivi la password" class="form-control">
+    </div>
+  </div>
+  <button  [disabled]="f.invalid" class="btn btn-primary mt-3">Invia</button>
+  <div *ngIf="f.invalid && f.dirty" class="alert alert-warning">
+    Devi compilare tutti i campi
+  </div>
+</form>
