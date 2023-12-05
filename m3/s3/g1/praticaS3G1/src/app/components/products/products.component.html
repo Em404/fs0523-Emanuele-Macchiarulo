@@ -10,8 +10,8 @@
         <p class="card-text">
           {{ p.brand }}
         </p>
-        <button class="btn btn-light">Aggiungi al carrello</button>
-        <button class="btn btn-light">Aggiungi ai preferiti</button>
+        <button (click)="toggleFavorite(p)" class="btn btn-light">Aggiungi al carrello</button>
+        <button (click)="addToCart(p)" class="btn btn-light">Aggiungi ai preferiti</button>
       </div>
     </div>
   </div>

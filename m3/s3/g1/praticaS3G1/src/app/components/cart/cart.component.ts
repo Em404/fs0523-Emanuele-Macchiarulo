@@ -11,11 +11,11 @@ export class CartComponent {
   constructor(private productSvc: ProductsService) {}
   cart: Iproduct[] = [];
 
-  ngOnInit(): void {
-    this.productSvc.cart$.subscribe((cart) => {
-      this.cart = cart;
-      console.log(cart);
+  products: Iproduct [] = []
 
+  ngOnInit(): void {
+    this.productSvc.cart$.subscribe((prod) => {
+      this.products.push(prod)
     });
   }
 }

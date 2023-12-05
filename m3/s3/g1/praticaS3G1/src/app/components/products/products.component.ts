@@ -14,8 +14,6 @@ export class ProductsComponent {
   ngOnInit(): void {
     this.productSvc.getAll().subscribe((products) => {
       this.products = products;
-      console.log(products);
-
     });
   }
 
