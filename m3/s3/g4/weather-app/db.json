@@ -12,5 +12,20 @@
       "nome": "Emanuele",
       "id": 2
     }
+  ],
+  "favorite": [
+    {
+      "id": 3175058,
+      "name": "Latina",
+      "coord": {
+        "lat": 41.4673,
+        "lon": 12.9038
+      },
+      "country": "IT",
+      "population": 107898,
+      "timezone": 3600,
+      "sunrise": 1702102960,
+      "sunset": 1702136321
+    }
   ]
 }

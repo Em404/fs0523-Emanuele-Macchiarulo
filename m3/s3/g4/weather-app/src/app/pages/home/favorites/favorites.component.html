@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div
+  class="weather d-flex flex-column justify-content-center align-items-center mt-3"
+>
+  <div *ngFor="let fav of weatherFavorite">
+    <div class="d-flex justify-content-between">
+      <h2>{{ fav.city.name }}</h2>
+      <button
+        class="btn btn-outline-danger"
+        (click)="removeFavorite(fav.city.id)"
+      >
+        Remove from favorites
+      </button>
+    </div>
+    <table class="table table-striped px-md-10 px-5">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Temp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prev of fav.list">
+          <td>{{ formatDateTime(prev.dt_txt) }}</td>
+          <td>{{ prev.weather[0].description }}</td>
+          <td><span>Temp: </span>{{ prev.main.temp }} &deg;C</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

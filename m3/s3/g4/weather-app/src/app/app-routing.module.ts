@@ -1,43 +1,16 @@
-import { RegisterComponent } from './components/register/register.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';
+import { AuthGuard } from './pages/auth/auth.guard';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo: '/home',
+    redirectTo: '/auth',
     pathMatch: 'full'
+
   },
-  {
-    path:'home',
-    component: HomeComponent
-  },
-  {
-    path:'login',
-    component: LoginComponent
-  },
-  {
-    path:'register',
-    component: RegisterComponent
-  },
-  {
-    path:'profile',
-    component: ProfileComponent,
-    children: [
-      {
-        path:'favorites',
-        component: FavoritesComponent
-      }
-    ]
-  },
-  // {
-  //   path:'**',//è la pagina non found
-  //   component: Page404Component
-  // }
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),canActivate: [AuthGuard]  },
+  { path: 'auth', loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule) },
 ];
 
 @NgModule({

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+  <form class="d-flex flex-column flex-md-row px-md-10 px-5 align-items-center" role="search">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Type your City"
+      aria-label="Search"
+      [(ngModel)]="searchQuery"
+      name="searchQuery"
+    />
+    <button class="btn btn-outline-success mt-3 mt-md-0" type="submit" (click)="search()">
+      Search
+    </button>
+  </form>
+  <div id="main" *ngIf="isMainVisible">
+    <div class="city d-flex flex-column justify-content-center align-items-center mt-3">
+      <div class="card my-5 text-center" style="width: 18rem;">
+        <!-- <div>{{getIcon(weatherForecast[0].weather[0].icon, '@4x')}}</div> -->
+        <div class="card-body">
+          <h5 class="card-title"> {{ citySel?.name }}</h5>
+          <p class="card-text">{{ citySel?.country }}</p>
+          <button (click)="addFavorite()" class="btn btn-primary">Add to Favorites</button>
+        </div>
+      </div>
+    </div>
+    <div class="weather d-flex flex-column justify-content-center align-items-center mt-3">
+      <table class="table table-striped px-md-10 px-5">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Temp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prev of weatherForecast">
+            <td>{{ formatDateTime(prev.dt_txt) }}</td>
+            <td>{{ prev.weather[0].description }}</td>
+            <td><span>Temp: </span>{{ prev.main.temp}} &deg;C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
